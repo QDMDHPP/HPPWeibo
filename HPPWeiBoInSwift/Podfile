@@ -1,0 +1,15 @@
+# 支持的最低版本
+platform :ios, '8.0'
+# 如果使用swift要把这一句打开
+use_frameworks!
+
+target 'HPPWeiBoInSwift' do
+
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'SnapKit', '~> 0.19.1'
+pod 'YYModel'
+pod 'MJRefresh'
+pod 'SVProgressHUD'
+
+end
