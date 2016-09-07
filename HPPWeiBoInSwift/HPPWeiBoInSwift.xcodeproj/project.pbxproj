@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2F5C0477EA93C547C64DFE13 /* Pods_HPPWeiBoInSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FBA410F99C0155250B8104 /* Pods_HPPWeiBoInSwift.framework */; };
+		AE03F9691D8040C1004F35EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F9681D8040C1004F35EE /* MainViewController.swift */; };
+		AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F96A1D8040DE004F35EE /* RootViewController.swift */; };
+		AE03F96D1D80417E004F35EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F96C1D80417E004F35EE /* HomeViewController.swift */; };
+		AE03F96F1D8041A8004F35EE /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F96E1D8041A8004F35EE /* MessageViewController.swift */; };
 		AEEB05FB1D802AE500D48E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */; };
-		AEEB05FD1D802AE500D48E70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB05FC1D802AE500D48E70 /* ViewController.swift */; };
 		AEEB06021D802AE500D48E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEEB06011D802AE500D48E70 /* Assets.xcassets */; };
 		AEEB060D1D802F5C00D48E70 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AEEB060C1D802F5C00D48E70 /* Podfile */; };
 /* End PBXBuildFile section */
@@ -18,9 +21,12 @@
 		65F75ECE644FBBDA5F660548 /* Pods-HPPWeiBoInSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPPWeiBoInSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HPPWeiBoInSwift/Pods-HPPWeiBoInSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		73FBA410F99C0155250B8104 /* Pods_HPPWeiBoInSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HPPWeiBoInSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E6B8B457E4B5CFC65BE092 /* Pods-HPPWeiBoInSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPPWeiBoInSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HPPWeiBoInSwift/Pods-HPPWeiBoInSwift.release.xcconfig"; sourceTree = "<group>"; };
+		AE03F9681D8040C1004F35EE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AE03F96A1D8040DE004F35EE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		AE03F96C1D80417E004F35EE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE03F96E1D8041A8004F35EE /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		AEEB05F71D802AE500D48E70 /* HPPWeiBoInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPWeiBoInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AEEB05FC1D802AE500D48E70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AEEB06011D802AE500D48E70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEEB06061D802AE500D48E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEEB060C1D802F5C00D48E70 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -38,6 +44,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE03F95E1D804028004F35EE /* class */ = {
+			isa = PBXGroup;
+			children = (
+				AE03F95F1D804028004F35EE /* Model(模型) */,
+				AE03F9601D804028004F35EE /* Tools(工具类) */,
+				AE03F9611D804028004F35EE /* View(视图和控制器) */,
+				AE03F9671D804028004F35EE /* ViewModel(视图模型) */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		AE03F95F1D804028004F35EE /* Model(模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model(模型)";
+			sourceTree = "<group>";
+		};
+		AE03F9601D804028004F35EE /* Tools(工具类) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tools(工具类)";
+			sourceTree = "<group>";
+		};
+		AE03F9611D804028004F35EE /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				AE03F9621D804028004F35EE /* Discover(发现) */,
+				AE03F9631D804028004F35EE /* Home(主页) */,
+				AE03F9641D804028004F35EE /* Main(主控制器) */,
+				AE03F9651D804028004F35EE /* Message(消息) */,
+				AE03F9661D804028004F35EE /* Profile(我) */,
+			);
+			path = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		AE03F9621D804028004F35EE /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		AE03F9631D804028004F35EE /* Home(主页) */ = {
+			isa = PBXGroup;
+			children = (
+				AE03F96C1D80417E004F35EE /* HomeViewController.swift */,
+			);
+			path = "Home(主页)";
+			sourceTree = "<group>";
+		};
+		AE03F9641D804028004F35EE /* Main(主控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				AE03F9681D8040C1004F35EE /* MainViewController.swift */,
+				AE03F96A1D8040DE004F35EE /* RootViewController.swift */,
+			);
+			path = "Main(主控制器)";
+			sourceTree = "<group>";
+		};
+		AE03F9651D804028004F35EE /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				AE03F96E1D8041A8004F35EE /* MessageViewController.swift */,
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		AE03F9661D804028004F35EE /* Profile(我) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Profile(我)";
+			sourceTree = "<group>";
+		};
+		AE03F9671D804028004F35EE /* ViewModel(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModel(视图模型)";
+			sourceTree = "<group>";
+		};
 		AEEB05EE1D802AE500D48E70 = {
 			isa = PBXGroup;
 			children = (
@@ -60,8 +149,8 @@
 		AEEB05F91D802AE500D48E70 /* HPPWeiBoInSwift */ = {
 			isa = PBXGroup;
 			children = (
+				AE03F95E1D804028004F35EE /* class */,
 				AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */,
-				AEEB05FC1D802AE500D48E70 /* ViewController.swift */,
 				AEEB06011D802AE500D48E70 /* Assets.xcassets */,
 				AEEB06061D802AE500D48E70 /* Info.plist */,
 			);
@@ -206,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEEB05FD1D802AE500D48E70 /* ViewController.swift in Sources */,
+				AE03F96D1D80417E004F35EE /* HomeViewController.swift in Sources */,
+				AE03F9691D8040C1004F35EE /* MainViewController.swift in Sources */,
+				AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */,
+				AE03F96F1D8041A8004F35EE /* MessageViewController.swift in Sources */,
 				AEEB05FB1D802AE500D48E70 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +394,7 @@
 			baseConfigurationReference = 65F75ECE644FBBDA5F660548 /* Pods-HPPWeiBoInSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = HPPWeiBoInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hpp.HPPWeiBoInSwift;
@@ -314,6 +407,7 @@
 			baseConfigurationReference = 74E6B8B457E4B5CFC65BE092 /* Pods-HPPWeiBoInSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = HPPWeiBoInSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hpp.HPPWeiBoInSwift;
