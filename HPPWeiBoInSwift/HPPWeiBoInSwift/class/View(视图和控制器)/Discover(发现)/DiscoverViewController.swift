@@ -1,19 +1,21 @@
 //
-//  MessageViewController.swift
+//  DiscoverViewController.swift
 //  HPPWeiBoInSwift
 //
-//  Created by 黄晓展 on 16/9/7.
+//  Created by 黄晓展 on 16/9/8.
 //  Copyright © 2016年 黄晓展. All rights reserved.
 //
 
 import UIKit
 
-class MessageViewController: RootViewController {
+class DiscoverViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        visitorView?.setVistorView("visitordiscover_image_message", title: "在消息页,你可以收到整个世界的消息", isAnimation: false)
+        
+        visitorView?.setVistorView("visitordiscover_image_message", title: "在发现页,你可以发现整个世界", isAnimation: false)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

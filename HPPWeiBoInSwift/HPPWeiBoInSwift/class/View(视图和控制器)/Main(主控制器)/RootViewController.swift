@@ -10,26 +10,45 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+    var isLogin: Bool = false
+    
+    var visitorView: VistorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.whiteColor()
+        
+        setupVisitorView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
+
+extension RootViewController {
+    
+    func setupVisitorView (){
+        if !isLogin && visitorView == nil {
+            visitorView = VistorView()
+            view.addSubview(visitorView!)
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

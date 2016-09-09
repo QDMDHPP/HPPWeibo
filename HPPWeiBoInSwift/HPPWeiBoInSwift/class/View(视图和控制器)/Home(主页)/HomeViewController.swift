@@ -13,7 +13,7 @@ class HomeViewController: RootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        visitorView?.setVistorView("visitordiscover_feed_image_house", title: "在首页,你可以追星,看段子,看美女和帅哥", isAnimation: true)
     }
 
     override func didReceiveMemoryWarning() {

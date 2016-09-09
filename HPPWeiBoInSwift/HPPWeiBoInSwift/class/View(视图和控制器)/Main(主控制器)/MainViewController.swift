@@ -15,11 +15,24 @@ import UIKit
 
 // MARK: - 生命周期函数, 属性, 构造函数
 class MainViewController: UITabBarController {
-
+    
+    //发布按钮,只创建一次,并且在第一次调用是创建
+    lazy var composeButton: UIButton = {
+        let button = UIButton(title: nil,image: "tabbar_compose_icon_add", backgroundImage: "tabbar_compose_button", target: self, action: "compose")
+       return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //更新UI
         setupUI()
+    
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //tabBar的item并不是在viewDidLoad中创建的,所以需要将发布按钮的创建写在viewWillAppear里面
+        addComposeButton()
         
     }
 }
@@ -29,7 +42,10 @@ extension MainViewController {
     /// 设置UI
     func setupUI() {
         //tabBar.tintColor = UIColor.orangeColor()
+        //添加控制器
         addViewControllers()
+        //添加tabbar的效果线
+        cetTabbarLine()
     }
     
     ///  添加子控制器
@@ -37,11 +53,16 @@ extension MainViewController {
     ///  - parameter controller: 子控制器
     ///  - parameter title:      title
     ///  - parameter imageName:  图片的名字
-    func addChildViewController(controller: UIViewController, title: String, imageName: String) {
+    func addChildViewController(controller: UIViewController, title: String, imageName: String?) {
         controller.title = title
-        //需要原图显示
-        controller.tabBarItem.image = UIImage(named: imageName)?.imageWithRenderingMode(.AlwaysOriginal)
-        controller.tabBarItem.selectedImage = UIImage(named: "\(imageName)_selected")?.imageWithRenderingMode(.AlwaysOriginal)
+        
+        if let imageName = imageName {
+        
+            //需要原图显示
+            controller.tabBarItem.image = UIImage(named: imageName)?.imageWithRenderingMode(.AlwaysOriginal)
+            controller.tabBarItem.selectedImage = UIImage(named: "\(imageName)_selected")?.imageWithRenderingMode(.AlwaysOriginal)
+        }
+       
         
         //文字的颜色(和大小)需要定制
         controller.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.darkGrayColor()], forState: .Normal)
@@ -58,19 +79,77 @@ extension MainViewController {
         addChildViewController(home, title: "首页", imageName: "tabbar_home")
         
         //添加message
-        let message = HomeViewController()
+        let message = MessageViewController()
         addChildViewController(message, title: "消息", imageName: "tabbar_message_center")
         
+        //添加占位tabBarItem
+        let setUp = UIViewController()
+        addChildViewController(setUp, title: "", imageName:nil)
+        
         //添加discover
-        let discover = HomeViewController()
+        let discover = DiscoverViewController()
         addChildViewController(discover, title: "发现", imageName: "tabbar_discover")
         
         //添加 profile
-        let profile = HomeViewController()
+        let profile = ProfileViewController()
         addChildViewController(profile,title: "我", imageName: "tabbar_profile")
+    }
+    
+    func addComposeButton () {
+/**
+//        let button = UIButton()
+//        //设置背景图片
+//        button.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: .Normal)
+//        button.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: .Selected)
+//        //背景图片
+//        button.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: .Normal)
+//        button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: .Selected)
+//        
+//        button.addTarget(self, action: "compose", forControlEvents: UIControlEvents.TouchUpInside)
+//        
+//        button.sizeToFit()
+*/
+        //设置button位置的第一种方式
+        //button.center = CGPointMake(screenWidth*0.5, screenHeight*0.5)
+        
+        //第二种方法
+        //CGRectInset: 以某一个Rect为基础, 向内向外, 对称缩放
+        composeButton.frame = CGRectInset(tabBar.bounds, screenWidth/5*2, 3)
+        
+        //将button添加到tabbar
+        tabBar.addSubview(composeButton)
+    }
+    
+    func cetTabbarLine () {
+        //如果希望修改tabbar那条件,需要设以下两个属性
+        tabBar.backgroundImage = UIImage(named: "tabbar_background")
+        //用代码去创建一张纯色的图片
+        tabBar.shadowImage = UIImage.creatImage(CGSizeMake(1, 1), color: UIColor(white: 0.9, alpha: 1.0))
+    
     }
  
 }
+
+//MARK: - 事件处理
+extension MainViewController {
+    
+    func compose () {
+        print("发布.....")
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
