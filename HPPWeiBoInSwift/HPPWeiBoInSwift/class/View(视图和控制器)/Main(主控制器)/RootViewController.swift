@@ -10,9 +10,9 @@ import UIKit
 
 class RootViewController: UIViewController {
     /// 用户是否登录
-    var isLogin: Bool = {
+    var isLogin: Bool {
         return UserAccount.sharedUserAccount.isLogin
-    }()
+    }
     
     var visitorView: VistorView?
     

@@ -107,7 +107,6 @@
 				AE4811B01D813B59008597AF /* VisitorView(访客视图) */,
 				AE03F9621D804028004F35EE /* Discover(发现) */,
 				AE03F9631D804028004F35EE /* Home(主页) */,
-				AE03F9641D804028004F35EE /* Main(主控制器) */,
 				AE03F9651D804028004F35EE /* Message(消息) */,
 				AE03F9661D804028004F35EE /* Profile(我) */,
 			);
@@ -136,7 +135,8 @@
 				AE03F9681D8040C1004F35EE /* MainViewController.swift */,
 				AE03F96A1D8040DE004F35EE /* RootViewController.swift */,
 			);
-			path = "Main(主控制器)";
+			name = "Main(主控制器)";
+			path = "HPPWeiBoInSwift/class/View(视图和控制器)/Main(主控制器)";
 			sourceTree = "<group>";
 		};
 		AE03F9651D804028004F35EE /* Message(消息) */ = {
@@ -193,6 +193,7 @@
 				AEEB060C1D802F5C00D48E70 /* Podfile */,
 				AEEB05F91D802AE500D48E70 /* HPPWeiBoInSwift */,
 				AEEB05F81D802AE500D48E70 /* Products */,
+				AE03F9641D804028004F35EE /* Main(主控制器) */,
 				E2FE1F7B068935A74415F502 /* Pods */,
 				D65C4A2D1A5F9FFF2038C74A /* Frameworks */,
 			);
