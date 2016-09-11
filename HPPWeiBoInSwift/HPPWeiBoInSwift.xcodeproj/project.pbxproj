@@ -20,6 +20,8 @@
 		AE4811B21D816DD4008597AF /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B11D816DD4008597AF /* VistorView.swift */; };
 		AE4811B41D816E71008597AF /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B31D816E71008597AF /* UIImageView+extension.swift */; };
 		AE4811B61D816F16008597AF /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B51D816F16008597AF /* UILabel+extension.swift */; };
+		AE8A30271D847AFD00DCA024 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30261D847AFD00DCA024 /* OAuthViewController.swift */; };
+		AE8A30341D85124E00DCA024 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30331D85124E00DCA024 /* NetworkTool.swift */; };
 		AEEB05FB1D802AE500D48E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */; };
 		AEEB06021D802AE500D48E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEEB06011D802AE500D48E70 /* Assets.xcassets */; };
 		AEEB060D1D802F5C00D48E70 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AEEB060C1D802F5C00D48E70 /* Podfile */; };
@@ -41,6 +43,8 @@
 		AE4811B11D816DD4008597AF /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
 		AE4811B31D816E71008597AF /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		AE4811B51D816F16008597AF /* UILabel+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
+		AE8A30261D847AFD00DCA024 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		AE8A30331D85124E00DCA024 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		AEEB05F71D802AE500D48E70 /* HPPWeiBoInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPWeiBoInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEEB06011D802AE500D48E70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		AE03F9601D804028004F35EE /* Tools(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				AE8A30321D85122800DCA024 /* NetworkTool */,
 				AE4811AA1D80EEE9008597AF /* Common.swift */,
 				AE4811AC1D80F5EA008597AF /* UIButton+extension.swift */,
 				AE4811AE1D80FF0F008597AF /* UIImage+extension.swift */,
@@ -93,6 +98,7 @@
 		AE03F9611D804028004F35EE /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				AE8A30251D847AD000DCA024 /* OAuth(登录) */,
 				AE4811B01D813B59008597AF /* VisitorView(访客视图) */,
 				AE03F9621D804028004F35EE /* Discover(发现) */,
 				AE03F9631D804028004F35EE /* Home(主页) */,
@@ -157,6 +163,22 @@
 				AE4811B11D816DD4008597AF /* VistorView.swift */,
 			);
 			path = "VisitorView(访客视图)";
+			sourceTree = "<group>";
+		};
+		AE8A30251D847AD000DCA024 /* OAuth(登录) */ = {
+			isa = PBXGroup;
+			children = (
+				AE8A30261D847AFD00DCA024 /* OAuthViewController.swift */,
+			);
+			name = "OAuth(登录)";
+			sourceTree = "<group>";
+		};
+		AE8A30321D85122800DCA024 /* NetworkTool */ = {
+			isa = PBXGroup;
+			children = (
+				AE8A30331D85124E00DCA024 /* NetworkTool.swift */,
+			);
+			path = NetworkTool;
 			sourceTree = "<group>";
 		};
 		AEEB05EE1D802AE500D48E70 = {
@@ -327,9 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8A30271D847AFD00DCA024 /* OAuthViewController.swift in Sources */,
 				AE4811AB1D80EEE9008597AF /* Common.swift in Sources */,
 				AE03F96D1D80417E004F35EE /* HomeViewController.swift in Sources */,
 				AE03F9691D8040C1004F35EE /* MainViewController.swift in Sources */,
+				AE8A30341D85124E00DCA024 /* NetworkTool.swift in Sources */,
 				AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */,
 				AE4811B61D816F16008597AF /* UILabel+extension.swift in Sources */,
 				AE4811A61D80EDDD008597AF /* DiscoverViewController.swift in Sources */,

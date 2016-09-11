@@ -9,9 +9,18 @@
 import UIKit
 import SnapKit
 
+protocol VisitorViewDelegate: NSObjectProtocol {
+    
+    func beginlogin()
+}
+
+
 //MARK: - 创建一个UIView的子类
 class VistorView: UIView {
-
+    /// 代理:第一要用weak来修饰,第二,要使用可选值
+    weak var delegate: VisitorViewDelegate?
+    
+    
     /// 大图标
     lazy var iconImage: UIImageView = UIImageView(imageName: "visitordiscover_feed_image_house")
 
@@ -26,11 +35,11 @@ class VistorView: UIView {
     
     
     ///  注册按钮
-    lazy var registButton: UIButton = UIButton(title: "注册", titleColor:globalColor, fontSize: 14, backgroundImage: "tabbar_compose_button", target: self, action: "regist" )
+    lazy var registButton: UIButton = UIButton(title: "注册", titleColor:globalColor, fontSize: 14, backgroundImage: "common_button_white_disable", target: self, action: "regist" )
     
     
     ///  登录按钮
-    lazy var loginButton: UIButton = UIButton(title: "登录", titleColor: UIColor.darkGrayColor(), fontSize: 14, backgroundImage: "common_button_white_disable", target: self, action: "regist")
+    lazy var loginButton: UIButton = UIButton(title: "登录", titleColor: UIColor.darkGrayColor(), fontSize: 14, backgroundImage: "common_button_white_disable", target: self, action: "login")
     
     init() {
         super.init(frame: screenBounds)
@@ -128,8 +137,19 @@ extension VistorView {
 
 }
 
-
-
+// MARK: - 点击事件
+extension VistorView {
+    //@objc可以让selector以oc发消息的形式来调用方法
+    //所有的点击事件,通知的事件,前面都要加一个 @objc private,养成习惯
+    @objc private func login(){
+        print("登录")
+        //swift里面调用代理的方法,不需要判断代理是否存在,也不需要判断代理方法是否被实现
+        delegate?.beginlogin()
+    }
+    @objc func regist(){
+        
+    }
+}
 
 
 

@@ -19,22 +19,67 @@ class RootViewController: UIViewController {
 
         view.backgroundColor = UIColor.whiteColor()
         
+        ///  用户登录成功通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginSuccess", name: loginSuccessNotification, object: nil)
+        
+        ///  添加访客视图
         setupVisitorView()
     }
 
-   
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }
 
 extension RootViewController {
     
     func setupVisitorView (){
         if !isLogin && visitorView == nil {
-            visitorView = VistorView()
-            view.addSubview(visitorView!)
+            visitorView = VistorView()//创建视图
+            visitorView?.delegate = self//设置代理
+            view.addSubview(visitorView!)//添加视图
         }
         
     }
 }
+
+
+//勿畏难,勿轻略
+extension RootViewController: VisitorViewDelegate{
+    func beginlogin() {
+        //显示用户登录页面
+        let oAuth = OAuthViewController()
+        let oAuthNav = UINavigationController(rootViewController: oAuth)
+        presentViewController(oAuthNav, animated: true, completion: nil)
+    }
+}
+
+extension RootViewController{
+    ///  用户登录成功的通知方法实现
+    func loginSuccess () {
+        print("登录成功")
+        visitorView?.removeFromSuperview()
+        visitorView = nil
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
