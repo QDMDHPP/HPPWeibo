@@ -8,7 +8,7 @@
 
 import UIKit
 
-let redictURL = "https://www.baidu.com"
+let redictURI = "https://www.baidu.com"
 let appKey = "2800304766"
 let appSecret = "84c31fab0796c3dee1e325ad562f6c5b"
 let userName = "15820827439"
@@ -70,13 +70,20 @@ extension OAuthViewController: UIWebViewDelegate {
         print(request.URL?.absoluteString)
         
         //如果说url是百度,就说明点击了授权,或者取消按钮,百度不应该显示, return false
-        if let urlString = request.URL?.absoluteString where urlString.hasPrefix(redictURL) {
+        if let urlString = request.URL?.absoluteString where urlString.hasPrefix(redictURI) {
             //代表点击的是授权按钮
             if let query = request.URL?.query where query.hasPrefix("code="){
                 //截取code
+                https://api.weibo.com/oauth2/access_token?client_id=2800304766&client_secret=84c31fab0796c3dee1e325ad562f6c5b&grant_type=authorization_code&code=38a087d1eeca5c9305af494c311f6062&redirect_uri=https://www.baidu.com
                 if let codeStartIndex = query.rangeOfString("code=")?.endIndex{
                     let code = query.substringFromIndex(codeStartIndex)
                     print("code ===== \(code)")
+                    
+                    let access_token_urlStr = "https://api.weibo.com/oauth2/access_token"
+                    let parameters = ["client_id":appKey, "client_secret":appSecret, "grant_type":"authorization_code","code":code,"redirect_uri":redictURI]
+                    NetworkTool.shareTool.request(access_token_urlStr, method: "POST", parameters: parameters, callBack: { (accessTokenResponse) -> () in
+                        print(accessTokenResponse)
+                    })
                 }
             }else{
                 dismissViewControllerAnimated(true, completion: nil)
