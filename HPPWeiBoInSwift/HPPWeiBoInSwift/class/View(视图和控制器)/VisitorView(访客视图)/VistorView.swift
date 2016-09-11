@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+//MARK: - 创建一个协议
 protocol VisitorViewDelegate: NSObjectProtocol {
     
     func beginlogin()
@@ -146,9 +147,7 @@ extension VistorView {
         //swift里面调用代理的方法,不需要判断代理是否存在,也不需要判断代理方法是否被实现
         delegate?.beginlogin()
     }
-    @objc func regist(){
-        
-    }
+ 
 }
 
 

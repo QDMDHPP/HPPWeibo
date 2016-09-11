@@ -41,6 +41,7 @@ extension UIButton {
             
         //添加点击事件
         if let target = target ,action = action{
+            //action在addTarget这个方法里面,是可以直接写字符串,但是如果从外面传,要写Selector
             let selector = Selector(action)
             self.addTarget(target, action:selector, forControlEvents: event)
         }

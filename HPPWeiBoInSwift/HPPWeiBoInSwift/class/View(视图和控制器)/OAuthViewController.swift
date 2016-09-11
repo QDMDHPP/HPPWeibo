@@ -11,9 +11,10 @@ import UIKit
 let redictURL = "https://www.baidu.com"
 let appKey = "2800304766"
 let appSecret = "84c31fab0796c3dee1e325ad562f6c5b"
-let userName = ""
+let userName = "15820827439"
+let passWord = "hpp8862489"
 
-let loginSuccessNotification = "HPPloginSuccessNotification"
+//let loginSuccessNotification = "HPPloginSuccessNotification"
 
 class OAuthViewController: UIViewController {
 
@@ -68,7 +69,22 @@ extension OAuthViewController: UIWebViewDelegate {
         
         print(request.URL?.absoluteString)
         
+        //如果说url是百度,就说明点击了授权,或者取消按钮,百度不应该显示, return false
+        if let urlString = request.URL?.absoluteString where urlString.hasPrefix(redictURL) {
+            //代表点击的是授权按钮
+            if let query = request.URL?.query where query.hasPrefix("code="){
+                //截取code
+                if let codeStartIndex = query.rangeOfString("code=")?.endIndex{
+                    let code = query.substringFromIndex(codeStartIndex)
+                    print("code ===== \(code)")
+                }
+            }else{
+                dismissViewControllerAnimated(true, completion: nil)
+            }
+            return false
+        }
         return true
+    
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {

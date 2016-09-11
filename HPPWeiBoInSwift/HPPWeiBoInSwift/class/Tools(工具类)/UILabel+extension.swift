@@ -9,7 +9,7 @@
 import UIKit
 
 extension UILabel {
-
+    ///  label的便利构造器.title后面这个问号,代表title可以传nil
     convenience init(title: String?, textColor: UIColor = UIColor.darkGrayColor(), fontSize: CGFloat = 13, alignment: NSTextAlignment = .Left, numberOfLines: Int = 0){
         
         self.init()

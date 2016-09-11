@@ -96,19 +96,6 @@ extension MainViewController {
     }
     
     func addComposeButton () {
-/**
-//        let button = UIButton()
-//        //设置背景图片
-//        button.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: .Normal)
-//        button.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: .Selected)
-//        //背景图片
-//        button.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: .Normal)
-//        button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: .Selected)
-//        
-//        button.addTarget(self, action: "compose", forControlEvents: UIControlEvents.TouchUpInside)
-//        
-//        button.sizeToFit()
-*/
         //设置button位置的第一种方式
         //button.center = CGPointMake(screenWidth*0.5, screenHeight*0.5)
         

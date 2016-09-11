@@ -19,16 +19,13 @@ class RootViewController: UIViewController {
 
         view.backgroundColor = UIColor.whiteColor()
         
-        ///  用户登录成功通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginSuccess", name: loginSuccessNotification, object: nil)
+
         
         ///  添加访客视图
         setupVisitorView()
     }
 
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
+
 }
 
 extension RootViewController {
@@ -44,7 +41,7 @@ extension RootViewController {
 }
 
 
-//勿畏难,勿轻略
+
 extension RootViewController: VisitorViewDelegate{
     func beginlogin() {
         //显示用户登录页面
@@ -54,14 +51,7 @@ extension RootViewController: VisitorViewDelegate{
     }
 }
 
-extension RootViewController{
-    ///  用户登录成功的通知方法实现
-    func loginSuccess () {
-        print("登录成功")
-        visitorView?.removeFromSuperview()
-        visitorView = nil
-    }
-}
+
 
 
 
