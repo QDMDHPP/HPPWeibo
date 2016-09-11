@@ -15,6 +15,8 @@ class NetworkTool: AFHTTPSessionManager {
     static let shareTool: NetworkTool = {
         
         let tool = NetworkTool(baseURL: nil)
+        //添加AFN可接收的数据格式(text/plain)
+        tool.responseSerializer.acceptableContentTypes?.insert("text/plain")
 
         return tool
         

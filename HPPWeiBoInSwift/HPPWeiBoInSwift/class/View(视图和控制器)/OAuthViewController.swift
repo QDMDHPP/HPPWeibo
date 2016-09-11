@@ -96,6 +96,7 @@ extension OAuthViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(webView: UIWebView) {
         //网页加载成功
+        webView.stringByEvaluatingJavaScriptFromString("document.getElementById('userId').value='\(userName)';document.getElementById('passwd').value='\(passWord)'")
     }
 }
 
