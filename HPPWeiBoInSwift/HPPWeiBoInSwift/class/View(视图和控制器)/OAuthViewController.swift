@@ -10,7 +10,7 @@ import UIKit
 
 
 
-//let loginSuccessNotification = "HPPloginSuccessNotification"
+let loginSuccessNotification = "HPPloginSuccessNotification"
 
 class OAuthViewController: UIViewController {
 
@@ -80,7 +80,31 @@ extension OAuthViewController: UIWebViewDelegate {
                             ///  使用access_token和uid获取用户信息
                             NetworkTool.shareTool.requestUserAccount(uid, acces_token: access_token, finish: { (userResponseObject) -> () in
                                 print(userResponseObject)
+                                
+                                if var userDic = userResponseObject as? [String: AnyObject] {
+                                    //把accessTokenResponse 和 userResponseObject 合并. 之后存储
+                                    for (k , v) in accessTokenDic {
+                                        userDic[k] = v
+                                    }
+                                    
+                                    //存储用户信息(UserDefaults)
+                                    UserAccount.sharedUserAccount.saveUserAccount(userDic)
+                                    
+                                    //发通知, 告诉其他控制器,登录成功了
+                                    
+                                    NSNotificationCenter.defaultCenter().postNotificationName(loginSuccessNotification,object:nil)
+                                    
+                                    //如果说用户信息没有获取到,也认为它失败了
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                }else{
+                                    //如果说用户信息没获取到,也认为它失败了
+                                    
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                }
                             })
+                        }else{
+                            //如果accessToken没有获取到,说明登录失败了
+                            self.dismissViewControllerAnimated(true, completion: nil)
                         }
                     
                     })

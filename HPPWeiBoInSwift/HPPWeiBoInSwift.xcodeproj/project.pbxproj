@@ -23,6 +23,7 @@
 		AE8A30271D847AFD00DCA024 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30261D847AFD00DCA024 /* OAuthViewController.swift */; };
 		AE8A30341D85124E00DCA024 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30331D85124E00DCA024 /* NetworkTool.swift */; };
 		AE8A30361D85905F00DCA024 /* NetworkTool+OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30351D85905F00DCA024 /* NetworkTool+OAuth.swift */; };
+		AE8A30381D85D85200DCA024 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30371D85D85200DCA024 /* UserAccount.swift */; };
 		AEEB05FB1D802AE500D48E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */; };
 		AEEB06021D802AE500D48E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEEB06011D802AE500D48E70 /* Assets.xcassets */; };
 		AEEB060D1D802F5C00D48E70 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AEEB060C1D802F5C00D48E70 /* Podfile */; };
@@ -47,6 +48,7 @@
 		AE8A30261D847AFD00DCA024 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		AE8A30331D85124E00DCA024 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		AE8A30351D85905F00DCA024 /* NetworkTool+OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkTool+OAuth.swift"; sourceTree = "<group>"; };
+		AE8A30371D85D85200DCA024 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		AEEB05F71D802AE500D48E70 /* HPPWeiBoInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPWeiBoInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEEB06011D802AE500D48E70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		AE03F95F1D804028004F35EE /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				AE8A30371D85D85200DCA024 /* UserAccount.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */,
 				AE8A30361D85905F00DCA024 /* NetworkTool+OAuth.swift in Sources */,
 				AE4811B61D816F16008597AF /* UILabel+extension.swift in Sources */,
+				AE8A30381D85D85200DCA024 /* UserAccount.swift in Sources */,
 				AE4811A61D80EDDD008597AF /* DiscoverViewController.swift in Sources */,
 				AE4811AF1D80FF0F008597AF /* UIImage+extension.swift in Sources */,
 				AE4811A91D80EE34008597AF /* ProfileViewController.swift in Sources */,
