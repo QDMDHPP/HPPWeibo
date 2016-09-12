@@ -12,6 +12,9 @@
 		AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F96A1D8040DE004F35EE /* RootViewController.swift */; };
 		AE03F96D1D80417E004F35EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F96C1D80417E004F35EE /* HomeViewController.swift */; };
 		AE03F96F1D8041A8004F35EE /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE03F96E1D8041A8004F35EE /* MessageViewController.swift */; };
+		AE3343A51D870DC700270FA6 /* NewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3343A41D870DC700270FA6 /* NewFeatureView.swift */; };
+		AE3343A71D8717FE00270FA6 /* NSBundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3343A61D8717FE00270FA6 /* NSBundle+extension.swift */; };
+		AE3343A91D871C2A00270FA6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3343A81D871C2A00270FA6 /* WelcomeView.swift */; };
 		AE4811A61D80EDDD008597AF /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811A51D80EDDD008597AF /* DiscoverViewController.swift */; };
 		AE4811A91D80EE34008597AF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811A81D80EE34008597AF /* ProfileViewController.swift */; };
 		AE4811AB1D80EEE9008597AF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811AA1D80EEE9008597AF /* Common.swift */; };
@@ -37,6 +40,9 @@
 		AE03F96A1D8040DE004F35EE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		AE03F96C1D80417E004F35EE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE03F96E1D8041A8004F35EE /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		AE3343A41D870DC700270FA6 /* NewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureView.swift; sourceTree = "<group>"; };
+		AE3343A61D8717FE00270FA6 /* NSBundle+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+extension.swift"; sourceTree = "<group>"; };
+		AE3343A81D871C2A00270FA6 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		AE4811A51D80EDDD008597AF /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		AE4811A81D80EE34008597AF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AE4811AA1D80EEE9008597AF /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 				AE4811AE1D80FF0F008597AF /* UIImage+extension.swift */,
 				AE4811B31D816E71008597AF /* UIImageView+extension.swift */,
 				AE4811B51D816F16008597AF /* UILabel+extension.swift */,
+				AE3343A61D8717FE00270FA6 /* NSBundle+extension.swift */,
 			);
 			path = "Tools(工具类)";
 			sourceTree = "<group>";
@@ -103,8 +110,10 @@
 		AE03F9611D804028004F35EE /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				AE3343A31D870D8F00270FA6 /* NewFeature(新特性页) */,
 				AE8A30251D847AD000DCA024 /* OAuth(登录) */,
 				AE4811B01D813B59008597AF /* VisitorView(访客视图) */,
+				AE03F9641D804028004F35EE /* Main(主控制器) */,
 				AE03F9621D804028004F35EE /* Discover(发现) */,
 				AE03F9631D804028004F35EE /* Home(主页) */,
 				AE03F9651D804028004F35EE /* Message(消息) */,
@@ -135,8 +144,7 @@
 				AE03F9681D8040C1004F35EE /* MainViewController.swift */,
 				AE03F96A1D8040DE004F35EE /* RootViewController.swift */,
 			);
-			name = "Main(主控制器)";
-			path = "HPPWeiBoInSwift/class/View(视图和控制器)/Main(主控制器)";
+			path = "Main(主控制器)";
 			sourceTree = "<group>";
 		};
 		AE03F9651D804028004F35EE /* Message(消息) */ = {
@@ -160,6 +168,15 @@
 			children = (
 			);
 			path = "ViewModel(视图模型)";
+			sourceTree = "<group>";
+		};
+		AE3343A31D870D8F00270FA6 /* NewFeature(新特性页) */ = {
+			isa = PBXGroup;
+			children = (
+				AE3343A41D870DC700270FA6 /* NewFeatureView.swift */,
+				AE3343A81D871C2A00270FA6 /* WelcomeView.swift */,
+			);
+			path = "NewFeature(新特性页)";
 			sourceTree = "<group>";
 		};
 		AE4811B01D813B59008597AF /* VisitorView(访客视图) */ = {
@@ -193,7 +210,6 @@
 				AEEB060C1D802F5C00D48E70 /* Podfile */,
 				AEEB05F91D802AE500D48E70 /* HPPWeiBoInSwift */,
 				AEEB05F81D802AE500D48E70 /* Products */,
-				AE03F9641D804028004F35EE /* Main(主控制器) */,
 				E2FE1F7B068935A74415F502 /* Pods */,
 				D65C4A2D1A5F9FFF2038C74A /* Frameworks */,
 			);
@@ -360,6 +376,7 @@
 				AE4811AB1D80EEE9008597AF /* Common.swift in Sources */,
 				AE03F96D1D80417E004F35EE /* HomeViewController.swift in Sources */,
 				AE03F9691D8040C1004F35EE /* MainViewController.swift in Sources */,
+				AE3343A71D8717FE00270FA6 /* NSBundle+extension.swift in Sources */,
 				AE8A30341D85124E00DCA024 /* NetworkTool.swift in Sources */,
 				AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */,
 				AE8A30361D85905F00DCA024 /* NetworkTool+OAuth.swift in Sources */,
@@ -368,7 +385,9 @@
 				AE4811A61D80EDDD008597AF /* DiscoverViewController.swift in Sources */,
 				AE4811AF1D80FF0F008597AF /* UIImage+extension.swift in Sources */,
 				AE4811A91D80EE34008597AF /* ProfileViewController.swift in Sources */,
+				AE3343A51D870DC700270FA6 /* NewFeatureView.swift in Sources */,
 				AE4811B21D816DD4008597AF /* VistorView.swift in Sources */,
+				AE3343A91D871C2A00270FA6 /* WelcomeView.swift in Sources */,
 				AE03F96F1D8041A8004F35EE /* MessageViewController.swift in Sources */,
 				AEEB05FB1D802AE500D48E70 /* AppDelegate.swift in Sources */,
 				AE4811B41D816E71008597AF /* UIImageView+extension.swift in Sources */,

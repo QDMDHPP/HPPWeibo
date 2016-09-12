@@ -46,6 +46,10 @@ extension MainViewController {
         addViewControllers()
         //添加tabbar的效果线
         cetTabbarLine()
+        //添加新功能也或者欢迎页
+        if UserAccount.sharedUserAccount.isLogin {
+            addNewFeatureOrWelcomeView()
+        }
     }
     
     ///  添加子控制器
@@ -112,9 +116,27 @@ extension MainViewController {
         tabBar.backgroundImage = UIImage(named: "tabbar_background")
         //用代码去创建一张纯色的图片
         tabBar.shadowImage = UIImage.creatImage(CGSizeMake(1, 1), color: UIColor(white: 0.9, alpha: 1.0))
-    
     }
  
+    // MARK: - 添加新特性页或者是欢迎页
+    private func addNewFeatureOrWelcomeView () {
+        //如果判断是否有新功能?
+        //1.比对当前版本和之前版本是否一致
+        //2.怎么获取当前版本, 现有的api
+        //3.怎么获取之前版本: 每一次安装之后,要把当前版本存在本地
+        //4.以上的事儿,谁来做?是否可以封装一下.单一职能原则. NSBundel
+        
+        //如果有新特性
+        if NSBundle.isNewVersion() {
+            //显示新特性页
+            let newFeature = NewFeatureView()
+            view.addSubview(newFeature)
+        }else{
+            //显示欢迎页
+            let welcome = WelcomeView()
+            view.addSubview(welcome)
+        }
+    }
 }
 
 //MARK: - 事件处理
