@@ -7,12 +7,22 @@
 //
 
 import UIKit
-
+//MARK: - 属性, 构造函数, 生命周期函数
 class RootViewController: UIViewController {
     /// 用户是否登录
     var isLogin: Bool {
         return UserAccount.sharedUserAccount.isLogin
     }
+    
+     /// tableView的懒加载
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: self.view.bounds)
+        tableView.dataSource = self
+        tableView.delegate = self
+       
+        return tableView
+    }()
+    
     
     var visitorView: VistorView?
     
@@ -24,6 +34,9 @@ class RootViewController: UIViewController {
         ///  用户登录成功通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginSuccess", name: loginSuccessNotification, object: nil)
         
+        ///  设置tableView
+        setupTableView()
+        
         ///  添加访客视图
         setupVisitorView()
     }
@@ -34,7 +47,12 @@ class RootViewController: UIViewController {
 
 }
 
+// MARK: - 设置UI
 extension RootViewController {
+    ///  设置tableView
+    private func setupTableView() {
+        view.addSubview(tableView)
+    }
     ///  创建visitorView
     func setupVisitorView (){
         if !isLogin && visitorView == nil {
@@ -60,16 +78,37 @@ extension RootViewController: VisitorViewDelegate{
 extension RootViewController {
     ///  用户登录成功的通知方法实现
     func loginSuccess () {
-        print("终于登录成功了")
         visitorView?.removeFromSuperview()
         visitorView = nil
     }
 }
 
-
-
-
-
+// MARK: - 获取数据
+extension RootViewController {
+    func loadData(){
+        
+    }
+}
+// MARK: - 设置TableView数据源
+extension RootViewController:UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+// MARK: - UITableViewDelegate
+extension RootViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+}
 
 
 
