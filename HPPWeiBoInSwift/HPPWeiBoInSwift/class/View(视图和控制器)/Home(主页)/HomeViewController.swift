@@ -30,7 +30,13 @@ class HomeViewController: RootViewController {
 extension HomeViewController {
     func setupTableView () {
         //1. registClass
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.registerClass(StatusCell.self, forCellReuseIdentifier: identifier)
+        
+        //tableView自适应行高,必须设置这两个属性
+        //预估行高: 用预估行高先去计算一个contentsize. 让tableView能够滚动.所以 预估行高 要尽量接近真实行高
+        tableView.estimatedRowHeight = 400
+        //设置该属性, 在滚动的过程中可以动态计算并调整contensize
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 }
 
@@ -42,7 +48,6 @@ extension HomeViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
-        cell.textLabel?.text = "======\(statusArray[indexPath.row])"
         return cell
     }
 }

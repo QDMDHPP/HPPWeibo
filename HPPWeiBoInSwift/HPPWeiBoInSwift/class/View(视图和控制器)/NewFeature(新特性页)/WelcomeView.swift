@@ -26,7 +26,7 @@ class WelcomeView: UIView {
     }()
     
     ///  欢迎文字
-    private lazy var welcomeLabel: UILabel = UILabel(title: "\(UserAccount.sharedUserAccount.screen_name), 欢迎回来", fontSize: 18, alignment: .Center)
+    private lazy var welcomeLabel: UILabel = UILabel(title: "\(UserAccount.sharedUserAccount.screen_name!), 欢迎回来", fontSize: 18, alignment: .Center)
     ///  子视图添加到父视图时调用该方法
     override func didMoveToSuperview() {
         //addSubView时调用
