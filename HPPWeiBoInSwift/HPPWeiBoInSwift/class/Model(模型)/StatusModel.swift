@@ -19,12 +19,17 @@ class StatusModel: NSObject {
     var source: String?
      /// 用户
     var user: UserModel?
+     /// 图片的模型数组
+    var pic_urls: [PictureModel]?
     
     ///  description
     override var description: String {
-        return dictionaryWithValuesForKeys(["created_at", "id", "text", "source", "user"]).debugDescription
+        return dictionaryWithValuesForKeys(["created_at", "id", "text", "source", "user","pic_urls"]).debugDescription
     }
     
+    class func modelContainerPropertyGenericClass() -> [String: AnyObject] {
+        return ["pic_urls": PictureModel.self]
+    }
 }
 
 

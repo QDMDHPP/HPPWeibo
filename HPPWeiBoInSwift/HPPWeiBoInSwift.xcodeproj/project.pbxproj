@@ -32,6 +32,10 @@
 		AE8A30341D85124E00DCA024 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30331D85124E00DCA024 /* NetworkTool.swift */; };
 		AE8A30361D85905F00DCA024 /* NetworkTool+OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30351D85905F00DCA024 /* NetworkTool+OAuth.swift */; };
 		AE8A30381D85D85200DCA024 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A30371D85D85200DCA024 /* UserAccount.swift */; };
+		AE9D09F61D8AFE100096C741 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D09F51D8AFE100096C741 /* StatusViewModel.swift */; };
+		AE9D09F81D8B044D0096C741 /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D09F71D8B044D0096C741 /* NSDate+extension.swift */; };
+		AE9D09FA1D8B29980096C741 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D09F91D8B29980096C741 /* PictureModel.swift */; };
+		AE9D09FC1D8B30FB0096C741 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D09FB1D8B30FB0096C741 /* StatusPictureView.swift */; };
 		AEEB05FB1D802AE500D48E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */; };
 		AEEB06021D802AE500D48E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEEB06011D802AE500D48E70 /* Assets.xcassets */; };
 		AEEB060D1D802F5C00D48E70 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AEEB060C1D802F5C00D48E70 /* Podfile */; };
@@ -65,6 +69,10 @@
 		AE8A30331D85124E00DCA024 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		AE8A30351D85905F00DCA024 /* NetworkTool+OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkTool+OAuth.swift"; sourceTree = "<group>"; };
 		AE8A30371D85D85200DCA024 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		AE9D09F51D8AFE100096C741 /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		AE9D09F71D8B044D0096C741 /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
+		AE9D09F91D8B29980096C741 /* PictureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		AE9D09FB1D8B30FB0096C741 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		AEEB05F71D802AE500D48E70 /* HPPWeiBoInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPPWeiBoInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEEB05FA1D802AE500D48E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEEB06011D802AE500D48E70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 				AE8A30371D85D85200DCA024 /* UserAccount.swift */,
 				AE3343AA1D8798B300270FA6 /* StatusModel.swift */,
 				AE68FB7C1D8A91BF00B03FA2 /* UserModel.swift */,
+				AE9D09F91D8B29980096C741 /* PictureModel.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -115,6 +124,7 @@
 				AE4811B31D816E71008597AF /* UIImageView+extension.swift */,
 				AE4811B51D816F16008597AF /* UILabel+extension.swift */,
 				AE3343A61D8717FE00270FA6 /* NSBundle+extension.swift */,
+				AE9D09F71D8B044D0096C741 /* NSDate+extension.swift */,
 			);
 			path = "Tools(工具类)";
 			sourceTree = "<group>";
@@ -179,6 +189,7 @@
 		AE03F9671D804028004F35EE /* ViewModel(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				AE9D09F51D8AFE100096C741 /* StatusViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 			children = (
 				AE68FB7A1D8A804B00B03FA2 /* StatusCell.swift */,
 				AE68FB7E1D8A93D200B03FA2 /* OriginalView.swift */,
+				AE9D09FB1D8B30FB0096C741 /* StatusPictureView.swift */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -395,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9D09F61D8AFE100096C741 /* StatusViewModel.swift in Sources */,
 				AE8A30271D847AFD00DCA024 /* OAuthViewController.swift in Sources */,
 				AE4811AB1D80EEE9008597AF /* Common.swift in Sources */,
 				AE03F96D1D80417E004F35EE /* HomeViewController.swift in Sources */,
@@ -404,6 +417,9 @@
 				AE8A30341D85124E00DCA024 /* NetworkTool.swift in Sources */,
 				AE03F96B1D8040DE004F35EE /* RootViewController.swift in Sources */,
 				AE8A30361D85905F00DCA024 /* NetworkTool+OAuth.swift in Sources */,
+				AE9D09FA1D8B29980096C741 /* PictureModel.swift in Sources */,
+				AE9D09FC1D8B30FB0096C741 /* StatusPictureView.swift in Sources */,
+				AE9D09F81D8B044D0096C741 /* NSDate+extension.swift in Sources */,
 				AE4811B61D816F16008597AF /* UILabel+extension.swift in Sources */,
 				AE68FB7F1D8A93D200B03FA2 /* OriginalView.swift in Sources */,
 				AE68FB7D1D8A91BF00B03FA2 /* UserModel.swift in Sources */,

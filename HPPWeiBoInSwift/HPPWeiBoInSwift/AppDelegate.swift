@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        let sinaTime = "Wed Jun 14 10:09:13 +0800 2015"
+        let sinaDate = NSDate.sinaTimeStrToDate(sinaTime)
+        let showTimeString = sinaDate.dateToWillShowTimeString()
+        print(showTimeString)
+        
         print(NSHomeDirectory())
         print(UserAccount.sharedUserAccount)
         

@@ -10,9 +10,9 @@ import UIKit
 
 class StatusCell: UITableViewCell {
     
-    var statusModel: StatusModel? {
+    var statusViewModel: StatusViewModel? {
         didSet {
-            originalView.statusModel = statusModel
+            originalView.statusViewModel = statusViewModel
         }
     }
     

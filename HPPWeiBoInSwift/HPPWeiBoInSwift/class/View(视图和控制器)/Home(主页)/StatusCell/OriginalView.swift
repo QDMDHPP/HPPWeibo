@@ -10,17 +10,47 @@ import UIKit
 
 class OriginalView: UIView {
     
-    var statusModel: StatusModel? {
-        didSet{
+    var statusViewModel: StatusViewModel? {
+        didSet {
+            
+            //把statusViewModel传递给PictureView
+            pictureView.statusViewModel = statusViewModel
+            
             //给控件赋值
-            iconImageView.setImage((statusModel?.user?.avatar_large)!, placeHolder: "avatar_default_big")
-            userName.text = statusModel?.user?.screen_name
+            let url = NSURL(string: (statusViewModel?.statusModel.user?.avatar_large)!)
             
-            creatTime.text = statusModel?.created_at
+            iconImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "avatar_default_big")) { (downloadImage, _, _, _) -> Void in
+                
+                downloadImage.asyCreateCircleImage(CGSizeMake(36, 36), callBack: { (circleImage) -> () in
+                    self.iconImageView.image = circleImage
+                })
+            }
             
-            source.text = statusModel?.source
+            userName.text = statusViewModel?.statusModel.user?.screen_name
             
-            statusText.text = statusModel?.text
+            vipIcon.image = statusViewModel?.vipIconImage
+            
+            rankIcon.image = statusViewModel?.mbRankIconImage
+            
+            creatTime.text = statusViewModel?.showTimeString
+            
+            source.text = statusViewModel?.sourceString
+            
+            statusText.text =  statusViewModel?.statusModel.text
+            
+            //更新pictureView的布局
+            //有图片
+            if let picurls = statusViewModel?.statusModel.pic_urls where picurls.count > 0 {
+                pictureView.snp_updateConstraints { (make) -> Void in
+                    make.top.equalTo(statusText.snp_bottom).offset(12)
+                    make.size.equalTo(statusViewModel!.originalPictureViewSize)
+                }
+            } else {
+                pictureView.snp_updateConstraints { (make) -> Void in
+                    make.top.equalTo(statusText.snp_bottom)
+                    make.height.equalTo(0)
+                }
+            }
         }
     }
     ///  头像
@@ -37,6 +67,8 @@ class OriginalView: UIView {
     let source: UILabel = UILabel(title: "来自天堂", textColor: UIColor.grayColor(), fontSize: 10)
     /// 微博正文
     let statusText: UILabel = UILabel(title: nil, fontSize:15)
+    /// 配图视图
+    let pictureView: StatusPictureView = StatusPictureView()
     
     init() {
         super.init(frame: CGRectZero)
@@ -62,6 +94,7 @@ extension OriginalView {
         addSubview(creatTime)
         addSubview(source)
         addSubview(statusText)
+        addSubview(pictureView)
         
         //3. 设一段文字(假数据)
         let randomCount = random() % 20 + 1
@@ -75,43 +108,50 @@ extension OriginalView {
         
         //自动布局
         iconImageView.snp_makeConstraints { (make) -> Void in
-            make.size.equalTo(CGSizeMake(36, 36))
-            make.left.equalTo(self).offset(12)
-            make.top.equalTo(self).offset(12)
+            make.size.equalTo(cellLayout.iconSize)
+            make.left.equalTo(self).offset(cellLayout.margin)
+            make.top.equalTo(self).offset(cellLayout.margin)
         }
         
         userName.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(iconImageView)
-            make.left.equalTo(iconImageView.snp_right).offset(12)
+            make.left.equalTo(iconImageView.snp_right).offset(cellLayout.margin)
         }
         
         rankIcon.snp_makeConstraints { (make) -> Void in
             make.bottom.equalTo(userName).offset(-3)
             make.left.equalTo(userName.snp_right).offset(5)
-            make.size.equalTo(CGSizeMake(15, 15))
+            make.size.equalTo(cellLayout.vipIconSize)
         }
         
         vipIcon.snp_makeConstraints { (make) -> Void in
             make.bottom.equalTo(iconImageView).offset(3)
             make.left.equalTo(iconImageView.snp_right).offset(-10)
-            make.size.equalTo(CGSizeMake(15, 15))
+            make.size.equalTo(cellLayout.vipIconSize)
         }
         
         creatTime.snp_makeConstraints { (make) -> Void in
             make.bottom.equalTo(iconImageView)
-            make.left.equalTo(iconImageView.snp_right).offset(12)
+            make.left.equalTo(iconImageView.snp_right).offset(cellLayout.margin)
         }
         
         source.snp_makeConstraints { (make) -> Void in
             make.bottom.equalTo(iconImageView)
-            make.left.equalTo(creatTime.snp_right).offset(12)
+            make.left.equalTo(creatTime.snp_right).offset(cellLayout.margin)
         }
         
         statusText.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(iconImageView.snp_bottom).offset(12)
+            make.top.equalTo(iconImageView.snp_bottom).offset(cellLayout.margin)
             make.left.equalTo(iconImageView)
-            make.right.equalTo(self).offset(-12)
-            make.bottom.equalTo(self).offset(-12)
+            make.right.equalTo(self).offset(-cellLayout.margin)
+            
+        }
+        
+        pictureView.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(statusText)
+            make.top.equalTo(statusText.snp_bottom).offset(cellLayout.margin)
+            make.size.equalTo(CGSizeZero)
+            make.bottom.equalTo(self).offset(-cellLayout.margin)
         }
     }
 }

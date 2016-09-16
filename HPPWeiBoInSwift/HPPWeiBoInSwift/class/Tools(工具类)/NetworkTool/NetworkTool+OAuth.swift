@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 let redictURI = "https://www.baidu.com"
 let appKey = "2800304766"
 let appSecret = "84c31fab0796c3dee1e325ad562f6c5b"
@@ -23,7 +24,10 @@ extension NetworkTool {
         return "https://api.weibo.com/oauth2/authorize?client_id=\(appKey)&redirect_uri=\(redictURI)"
     }
 
-    
+    ///  获取access_token
+    ///
+    ///  - parameter code:   用户登录返回的code
+    ///  - parameter finish: 请求完成回调
     func requestAccessToken(code: String, finish:(AnyObject?)->()){
         
         let access_token_urlStr = "https://api.weibo.com/oauth2/access_token"
@@ -31,7 +35,9 @@ extension NetworkTool {
          let parameters = ["client_id":appKey, "client_secret":appSecret, "grant_type":"authorization_code","code":code,"redirect_uri":redictURI]
         
         NetworkTool.shareTool.request(access_token_urlStr, method: "POST", parameters: parameters, callBack: { (accessTokenResponse) -> () in
+            //完成回调
             finish(accessTokenResponse)
+            //使用YYModel做字典转模型
         })
     }
     
@@ -45,6 +51,7 @@ extension NetworkTool {
         let parameters = ["access_token":acces_token, "uid":uid]
 
         NetworkTool.shareTool.request(urlStr, method: "GET", parameters: parameters) { (userResponseObjet) -> () in
+            //完成回调
             finish(userResponseObjet)
         }
     }

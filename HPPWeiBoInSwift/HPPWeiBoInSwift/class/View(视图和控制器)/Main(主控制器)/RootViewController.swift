@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MJRefresh
+
 //MARK: - 属性, 构造函数, 生命周期函数
 class RootViewController: UIViewController {
     /// 用户是否登录
@@ -16,14 +18,29 @@ class RootViewController: UIViewController {
     
      /// tableView的懒加载
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.bounds)
+        let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
        
         return tableView
     }()
     
+    /// 下拉刷新控件
+    lazy var refreshHeader: MJRefreshNormalHeader = {
+        let header = MJRefreshNormalHeader()
+        header.setRefreshingTarget(self, refreshingAction: "loadData")
+        return header
+    }()
     
+    /// 上拉刷新控件
+    lazy var refreshFooter: MJRefreshAutoNormalFooter = {
+        let footer = MJRefreshAutoNormalFooter()
+        footer.setRefreshingTarget(self, refreshingAction: "loadData")
+        return footer
+    }()
+    
+    
+    /// 访客视图
     var visitorView: VistorView?
     
     override func viewDidLoad() {
@@ -41,6 +58,14 @@ class RootViewController: UIViewController {
         setupVisitorView()
     }
     
+    //1. 在viewDidLoad中,view的frame是不准确的.
+    //2. tabbar上的子控制器,是在window的makeKeyAndVisible之后,会再次调整view的frame
+    //3. 如果需要以view的bounds为参照,设置子视图的frame, 需要再viewWillAppear方法中设置
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.frame = self.view.bounds
+    }
+    
     deinit {//杀掉通知
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -50,11 +75,15 @@ class RootViewController: UIViewController {
 // MARK: - 设置UI
 extension RootViewController {
     ///  设置tableView
-    private func setupTableView() {
+    func setupTableView() {
         view.addSubview(tableView)
+        
+        //设置上下拉刷新的控件
+        tableView.mj_header = refreshHeader
+        tableView.mj_footer = refreshFooter
     }
     ///  创建visitorView
-    func setupVisitorView (){
+    private func setupVisitorView (){
         if !isLogin && visitorView == nil {
             visitorView = VistorView()//创建视图
             visitorView?.delegate = self//设置代理
@@ -67,6 +96,7 @@ extension RootViewController {
 
 
 extension RootViewController: VisitorViewDelegate{
+    ///  点击visitorView的登录按钮
     func beginlogin() {
         //显示用户登录页面
         let oAuth = OAuthViewController()
