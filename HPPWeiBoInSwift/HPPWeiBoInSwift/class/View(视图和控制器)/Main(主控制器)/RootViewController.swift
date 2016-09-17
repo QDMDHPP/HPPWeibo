@@ -54,8 +54,6 @@ class RootViewController: UIViewController {
         ///  设置tableView
         setupTableView()
         
-        ///  添加访客视图
-        setupVisitorView()
     }
     
     //1. 在viewDidLoad中,view的frame是不准确的.
@@ -64,6 +62,10 @@ class RootViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.frame = self.view.bounds
+        
+        ///  添加访客视图
+        setupVisitorView()
+
     }
     
     deinit {//杀掉通知

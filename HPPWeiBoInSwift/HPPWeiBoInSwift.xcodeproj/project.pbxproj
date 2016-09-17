@@ -25,6 +25,8 @@
 		AE4811B21D816DD4008597AF /* VistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B11D816DD4008597AF /* VistorView.swift */; };
 		AE4811B41D816E71008597AF /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B31D816E71008597AF /* UIImageView+extension.swift */; };
 		AE4811B61D816F16008597AF /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B51D816F16008597AF /* UILabel+extension.swift */; };
+		AE58D9F91D8C0D03008B9687 /* RetweetedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58D9F81D8C0D03008B9687 /* RetweetedView.swift */; };
+		AE58D9FB1D8C62BB008B9687 /* StatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58D9FA1D8C62BB008B9687 /* StatusToolBar.swift */; };
 		AE68FB7B1D8A804B00B03FA2 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68FB7A1D8A804B00B03FA2 /* StatusCell.swift */; };
 		AE68FB7D1D8A91BF00B03FA2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68FB7C1D8A91BF00B03FA2 /* UserModel.swift */; };
 		AE68FB7F1D8A93D200B03FA2 /* OriginalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68FB7E1D8A93D200B03FA2 /* OriginalView.swift */; };
@@ -62,6 +64,8 @@
 		AE4811B11D816DD4008597AF /* VistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistorView.swift; sourceTree = "<group>"; };
 		AE4811B31D816E71008597AF /* UIImageView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		AE4811B51D816F16008597AF /* UILabel+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
+		AE58D9F81D8C0D03008B9687 /* RetweetedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedView.swift; sourceTree = "<group>"; };
+		AE58D9FA1D8C62BB008B9687 /* StatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusToolBar.swift; sourceTree = "<group>"; };
 		AE68FB7A1D8A804B00B03FA2 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		AE68FB7C1D8A91BF00B03FA2 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AE68FB7E1D8A93D200B03FA2 /* OriginalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalView.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				AE68FB7A1D8A804B00B03FA2 /* StatusCell.swift */,
 				AE68FB7E1D8A93D200B03FA2 /* OriginalView.swift */,
 				AE9D09FB1D8B30FB0096C741 /* StatusPictureView.swift */,
+				AE58D9F81D8C0D03008B9687 /* RetweetedView.swift */,
+				AE58D9FA1D8C62BB008B9687 /* StatusToolBar.swift */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -425,10 +431,12 @@
 				AE68FB7D1D8A91BF00B03FA2 /* UserModel.swift in Sources */,
 				AE8A30381D85D85200DCA024 /* UserAccount.swift in Sources */,
 				AE4811A61D80EDDD008597AF /* DiscoverViewController.swift in Sources */,
+				AE58D9F91D8C0D03008B9687 /* RetweetedView.swift in Sources */,
 				AE4811AF1D80FF0F008597AF /* UIImage+extension.swift in Sources */,
 				AE4811A91D80EE34008597AF /* ProfileViewController.swift in Sources */,
 				AE3343A51D870DC700270FA6 /* NewFeatureView.swift in Sources */,
 				AE4811B21D816DD4008597AF /* VistorView.swift in Sources */,
+				AE58D9FB1D8C62BB008B9687 /* StatusToolBar.swift in Sources */,
 				AE3343A91D871C2A00270FA6 /* WelcomeView.swift in Sources */,
 				AE68FB7B1D8A804B00B03FA2 /* StatusCell.swift in Sources */,
 				AE03F96F1D8041A8004F35EE /* MessageViewController.swift in Sources */,

@@ -102,6 +102,8 @@ extension HomeViewController {
         tableView.estimatedRowHeight = 400
         //设置该属性, 在滚动的过程中可以动态计算并调整contensize
         tableView.rowHeight = UITableViewAutomaticDimension
+        //取消分割线
+        tableView.separatorStyle = .None
     }
 }
 

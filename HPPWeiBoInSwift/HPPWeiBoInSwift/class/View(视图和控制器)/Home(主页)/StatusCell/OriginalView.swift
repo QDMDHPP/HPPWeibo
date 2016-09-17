@@ -72,7 +72,7 @@ class OriginalView: UIView {
     
     init() {
         super.init(frame: CGRectZero)
-        
+        self.backgroundColor = UIColor.whiteColor()
         //设置UI
         setupUI()
         

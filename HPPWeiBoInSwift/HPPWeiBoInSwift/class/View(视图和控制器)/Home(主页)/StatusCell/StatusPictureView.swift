@@ -17,7 +17,7 @@ class StatusPictureView: UIView {
                 imageView.hidden = true
             }
             
-            if let picurls = statusViewModel?.statusModel.pic_urls{
+            if let picurls = statusViewModel?.pictureModels{
                 
                 var index = 0
                 
