@@ -27,6 +27,7 @@
 		AE4811B61D816F16008597AF /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4811B51D816F16008597AF /* UILabel+extension.swift */; };
 		AE58D9F91D8C0D03008B9687 /* RetweetedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58D9F81D8C0D03008B9687 /* RetweetedView.swift */; };
 		AE58D9FB1D8C62BB008B9687 /* StatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58D9FA1D8C62BB008B9687 /* StatusToolBar.swift */; };
+		AE58D9FD1D8D6C37008B9687 /* StatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58D9FC1D8D6C37008B9687 /* StatusListViewModel.swift */; };
 		AE68FB7B1D8A804B00B03FA2 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68FB7A1D8A804B00B03FA2 /* StatusCell.swift */; };
 		AE68FB7D1D8A91BF00B03FA2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68FB7C1D8A91BF00B03FA2 /* UserModel.swift */; };
 		AE68FB7F1D8A93D200B03FA2 /* OriginalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE68FB7E1D8A93D200B03FA2 /* OriginalView.swift */; };
@@ -66,6 +67,7 @@
 		AE4811B51D816F16008597AF /* UILabel+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		AE58D9F81D8C0D03008B9687 /* RetweetedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedView.swift; sourceTree = "<group>"; };
 		AE58D9FA1D8C62BB008B9687 /* StatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusToolBar.swift; sourceTree = "<group>"; };
+		AE58D9FC1D8D6C37008B9687 /* StatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusListViewModel.swift; sourceTree = "<group>"; };
 		AE68FB7A1D8A804B00B03FA2 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		AE68FB7C1D8A91BF00B03FA2 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AE68FB7E1D8A93D200B03FA2 /* OriginalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OriginalView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				AE9D09F51D8AFE100096C741 /* StatusViewModel.swift */,
+				AE58D9FC1D8D6C37008B9687 /* StatusListViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE58D9FD1D8D6C37008B9687 /* StatusListViewModel.swift in Sources */,
 				AE9D09F61D8AFE100096C741 /* StatusViewModel.swift in Sources */,
 				AE8A30271D847AFD00DCA024 /* OAuthViewController.swift in Sources */,
 				AE4811AB1D80EEE9008597AF /* Common.swift in Sources */,

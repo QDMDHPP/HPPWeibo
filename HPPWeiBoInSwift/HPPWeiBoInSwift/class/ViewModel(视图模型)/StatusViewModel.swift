@@ -58,6 +58,9 @@ class StatusViewModel: NSObject {
     /// 配图的图片模型数组
     var pictureModels:[PictureModel] = []
     
+    /// 记录行高
+    var rowHeight: CGFloat = 0
+    
     init(statusModel: StatusModel) {
         self.statusModel = statusModel
         super.init()
@@ -78,6 +81,72 @@ class StatusViewModel: NSObject {
         self.caculatePictureViewSize()
         
     }
+    
+    func caculateCellHeigh () {
+        var height:CGFloat = 0
+
+        let testSize = CGSizeMake(screenWidth - cellLayout.margin * 2,CGFloat(MAXFLOAT))
+        
+        //>a:原创微博
+        //1. cell和cell 之间的间隔
+        height += 5
+        //2. 原创文字和顶部的间隔
+        height += cellLayout.margin
+        //3. 用户头像高度
+        height += cellLayout.iconSize.height
+        //4. 原创微博文字的顶部的margin
+        height += cellLayout.margin
+        
+        //5. 原创微博的文字高度
+        if let text = statusModel.text {
+            let statusTextSize = (text as NSString).boundingRectWithSize(testSize, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.systemFontOfSize(15)], context: nil).size
+            height += statusTextSize.height
+        }
+        
+        //bottom
+        height += cellLayout.margin
+        
+        //原创微博有图片
+        if originalPictureViewSize != CGSizeZero { 
+//        if let originalPicUrls = statusModel.pic_urls where originalPicUrls.count > 0{
+            //pictureView的topMargin
+            height += cellLayout.margin
+            height += pictureViewSize.height
+        }
+        
+        //>a: 转发微博
+        if let retweetedStatus = statusModel.retweeted_status {
+//        if let retweetedStatus = statusModel.retweeted_status{
+            //转发微博的文字的top
+            height += cellLayout.margin
+            
+            //转发微博的文字高度
+            
+            if let text = retweetedText {
+//            if let text = retweetedStatus.text{
+                let retweetedTextSize = (text as NSString).boundingRectWithSize(testSize, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.systemFontOfSize(15)], context: nil).size
+                height += retweetedTextSize.height
+            }
+            
+            //底部的bottom
+            height += cellLayout.margin
+            
+            //是否有图片
+            if retweetedPictureViewSize != CGSizeZero {
+//            if let retweetedPicUrls = retweetedStatus.pic_urls where retweetedPicUrls.count > 0{
+                //图片的top margin
+                height += cellLayout.margin
+                //图片的高度
+                height += pictureViewSize.height
+            }
+        }
+        
+        //>a: toolBar
+        height += 36
+        
+        rowHeight = height
+    }
+    
     //MARK: - 设置转发微博配图
     func setpictureModels () {
         //如果有原创微博有图片

@@ -20,6 +20,8 @@ class UserModel: NSObject {
     ///  皇冠的等级
     var mbrank: Int = 0
     
+    
+    
     ///  description
     override var description: String {
         return dictionaryWithValuesForKeys(["id", "screen_name", "avatar_large", "verified_type", "mbrank"]).description

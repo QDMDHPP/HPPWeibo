@@ -137,9 +137,16 @@ extension RootViewController:UITableViewDataSource {
 }
 // MARK: - UITableViewDelegate
 extension RootViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 0
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
+    
+    
 }
 
 

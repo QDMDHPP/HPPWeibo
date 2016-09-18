@@ -11,6 +11,7 @@ import UIKit
 let screenBounds = UIScreen.mainScreen().bounds
 let screenWidth = UIScreen.mainScreen().bounds.size.width
 let screenHeight = UIScreen.mainScreen().bounds.size.height
+let screenScale = UIScreen.mainScreen().scale
 
  /// tabbar的高度
 let tabBarHeight : CGFloat = 49
